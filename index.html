@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Salad's Menu</h1>
+        
+            <div>
+                <img src="sall1.png" alt="background"class="bg">
+            </div> 
+
+        <div class="search-box">
+                
+                <form action="https://www.google.com/search" method="GET" class="search-box">
+                    <input 
+                        type="text" 
+                        placeholder="Telusuri sesuatu..." 
+                        class="search-input"
+                        name="q" 
+                        required
+                        style="border: none; outline: none; flex: 1;"
+                    >
+                    <button class="button" type="submit">Search</button>
+                </form>
+        </div>
+
+            <div class="note">
+                <p5>Don't have an account?</p5>
+            </div>
+ 
+    <nav>
+        <ul>
+                <li><a href="salmew.html">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    </div>
+
+        <div 
+            class="leaves">
+        </div>
+
+                    <nav class="navbar-kanan">
+                        <a href="S-mail.html">S-mail</a>
+                        <a href="gmbr.html">Gambar</a>
+
+                        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                        <span class="material-icons">apps</span>
+                        <span class="material-icons">account_circle</span>
+                    </nav>
+
+            
+        <script>
+        function createLeaf(){
+            const leaf = document.createElement("div");
+            leaf.classList.add("leaf");
+            leaf.innerHTML = "🍁";
+
+            leaf.style.left = Math.random() * window.innerWidth + "px";
+            leaf.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+            document.body.appendChild(leaf);
+
+            setTimeout(()=>{
+                leaf.remove();
+            },6000);
+        }
+
+        setInterval(createLeaf, 500);
+        </script>
+
+
+</body>
+
+</html>
