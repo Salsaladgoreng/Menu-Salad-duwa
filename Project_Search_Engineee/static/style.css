@@ -1,0 +1,249 @@
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, sans-serif;
+            background: linear-gradient(
+                rgba(44, 161, 18, 0.64),
+                rgba(10, 153, 6, 0.934)
+            ) ,url("kota.png");
+            background-size: center;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .bg{
+            position: absolute;
+            z-index: 1;
+            width: 350px;
+            height: 350px;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container {
+            margin: 100px auto 0;
+            text-align: center;
+            width: 100%;
+            max-width: 650px;
+            background-position: center;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 60px;
+            margin-bottom: 100px;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: center;
+            margin-right: 10px;
+            -webkit-text-stroke: 2px #14670f;
+            
+        }
+
+        .note{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+            font-size: 15px;
+            font-family: monospace;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        nav li{
+            margin: 0 10px;
+        }
+
+        nav a{
+            color: rgb(0, 8, 162);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+       .search-box {
+            z-index: 4;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border-radius: 50px;
+            padding: 3px 10px; 
+            width: 90%;
+        }
+
+        .search-input {
+            z-index: 5;
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 15px;
+            font-family: Verdana, sans-serif;
+        }
+
+
+        .button {
+            z-index: 6;
+            border: none;
+            background: #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        .navbar-kanan {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .navbar-kanan a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+            font-family: Verdana, sans-serif;
+
+        }
+
+        .navbar-kanan a:hover {
+            text-decoration: underline;
+        }
+
+        .material-icons {
+            font-size: 13px; 
+            color: #ffffff; 
+            cursor: pointer;
+            padding: 8px;
+            vertical-align: middle;
+        
+        }
+
+        .material-icons:hover {
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+        }
+
+
+        input, button {
+            vertical-align: middle;
+        }
+
+        .button:hover{
+            background: #d0d0d0;
+        }
+
+        .leaf{
+            position: fixed;
+            top: -50px;
+            font-size: 24px;
+            animation: fall linear forwards;
+        }
+
+        /* Container Hasil Utama */
+        .result-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 30px;
+            color: white;
+            text-align: left;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .result-header h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .tag {
+            background: #4CAF50;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 50px;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 15px 0;
+            color: #e0e0e0;
+        }
+
+        /* Grid untuk info cepat ala Google */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item label {
+            display: block;
+            font-size: 0.75rem;
+            color: #aaa;
+            text-transform: uppercase;
+        }
+
+        .info-item p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .divider {
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 20px 0;
+        }
+
+        .additional-info p {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+                @keyframes fall{
+                    0%{
+                        transform: translateY(-50px) rotate(0deg);
+                        opacity: 1;
+                    }
+                    100%{
+                        transform: translateY(100vh) rotate(360deg);
+                        opacity: 0;
+                    }
+                }

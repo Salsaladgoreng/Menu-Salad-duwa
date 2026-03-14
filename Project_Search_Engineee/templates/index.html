@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salad's Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        
+        {% if not hasil %}
+            <h1>Salad's Engine</h1>
+            
+            <div>
+                <img src="{{ url_for('static', filename='sall1.png') }}" alt="background" class="bg">
+            </div> 
+
+            <div class="search-box">
+                <form action="/" method="POST" style="display: flex; width: 100%;">
+                    <input 
+                        type="text" 
+                        name="search_query" 
+                        placeholder="Telusuri kota (contoh: barcelona)..." 
+                        class="search-input" 
+                        required
+                    >
+                    <button class="button" type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="note" style="margin-top: 50px;">
+                <p>Don't have an account? <a href="index2.html" style="color: #2802ff;">Sign Up</a></p>
+            </div>
+        {% endif %}
+
+        {% if hasil %}
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>{{ hasil.nama }}</h2>
+                    <span class="tag">Informasi Kota</span>
+                </div>
+                
+                <div class="result-body">
+                    <p class="description"><strong>Sejarah:</strong> {{ hasil.sejarah }}</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="material-icons">people</span>
+                            <div>
+                                <label>Populasi</label>
+                                <p>{{ hasil.populasi }}</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="material-icons">landscape</span>
+                            <div>
+                                <label>Luas Wilayah</label>
+                                <p>{{ hasil.luas_wilayah }}</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="material-icons">thermostat</span>
+                            <div>
+                                <label>Iklim & Suhu</label>
+                                <p>{{ hasil.iklim }} ({{ hasil.suhu_rata_rata }}°C)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="material-icons">account_balance</span>
+                            <div>
+                                <label>Landmark Utama</label>
+                                <p>{{ hasil.landmark }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="additional-info">
+                        <p><strong>Distrik:</strong> {{ hasil.distrik }}</p>
+                        <p><strong>Bahasa:</strong> {{ hasil.bahasa }}</p>
+                        <p><strong>Mata Uang:</strong> {{ hasil.mata_uang }}</p>
+                        <p><strong>Ikon Kota:</strong> {{ hasil.ikon_kota }}</p>
+                        <p><strong>Transportasi:</strong> {{ hasil.transportasi }}</p>
+                        <p><strong>Kuliner Khas:</strong> {{ hasil.kuliner }}</p>
+                        <p><strong>Nama Bandara:</strong> {{ hasil.nama_bandara }}</p>
+                        <p><strong>Zona Waktu:</strong> {{ hasil.zona_waktu }}</p>
+                        <p><strong>Kode Telepon:</strong> {{ hasil.kode_telepon }}</p>
+                        <p><strong>Klub Olahraga:</strong> {{ hasil.klub_olahraga }}</p>
+                        <p><strong>Keamanan:</strong> {{ hasil.indeks_keamanan }}</p>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                        <a href="/" style="color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+                            <span class="material-icons" style="vertical-align: middle; font-size: 1.1rem;">arrow_back</span> Kembali ke Pencarian
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        {% elif error %}
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="color: rgb(255, 255, 255); background: rgba(165, 28, 28, 0.7); padding: 15px; border-radius: 10px; display: inline-block;">
+                    {{ error }}
+                </p>
+                <br>
+                <a href="/" style="color: white; text-decoration: underline; display: block; margin-top: 15px;">Coba lagi</a>
+            </div>
+        {% endif %}
+
+    </div>
+
+    <nav class="navbar-kanan">
+        <a href="S-mail.html">S-mail</a>
+        <a href="gmbr.html">Gambar</a>
+        <a href="gmbr.html"><span class="material-icons">apps</span></a>
+        <a href="index2.html"><span class="material-icons">account_circle</span></a>
+    </nav>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
